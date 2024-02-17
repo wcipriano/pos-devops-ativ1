@@ -1,0 +1,27 @@
+extends layout
+
+block content
+  h2=title
+  p Welcome to Calculator 
+  form(action="/calc", method="POST") 
+    div.mb-3
+      label(for='num1') Number 1:
+      input#name.form-control(type='number', placeholder='fill number one' name='num1', value=num1)
+    div.mb-3
+      label(for='num2') Number 2:
+      input#name.form-control(type='number', placeholder='fill number two' name='num2', value=num2)
+    div.mb-3
+      label(for='op') Operação:
+      select#name.form-control(name='op')
+        option(value=) Selecione...
+        option(value="mul", selected=(op=='mul')) Multiplicação
+        option(value="sum", selected=(op=='sum')) Soma
+    div.mb-3
+      button.btn.btn-primary(type="submit", name="asdf") Submit
+
+  if op == 'mul'
+    h2="Resultado:"
+    p #{num1} * #{num2} = #{res}
+  else if op == 'sum'
+    h2="Resultado:"
+    p #{num1} + #{num2} = #{res}
