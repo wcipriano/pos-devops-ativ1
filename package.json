@@ -6,7 +6,7 @@
     "dev": "node app.js",
     "debug": "nodemon --inspect server.js",
     "start": "node ./bin/www",
-    "build": "node ./bin/www",
+    "build": "node ./bin/www &",
     "test": "jest"
   },
   "dependencies": {
